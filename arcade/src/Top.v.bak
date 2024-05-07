@@ -1,0 +1,71 @@
+module Top (
+        input clk,
+        input rstn,
+        input gen,
+        input [6:0] dip,
+        output reg [6:0] guess,
+        output reg [7:0] led,
+        output [6:0] one,
+        output [6:0] ten,
+        output [6:0] hundred
+    );
+    parameter SET_NUM = 0, GEN_NUM = 1;
+    reg [8:0] init_val_ns;
+    wire [8:0] init_val_cs;
+    reg [2:0] cs, ns;
+    wire [6:0] randnum;
+    Pseudo_Random u1(
+                      .Clk(clk),
+                      .Rst(),
+                      .Gen(gen),
+                      .one(randnum),
+                      .ten(),
+                      .hundred()
+                  );
+
+    assign init_val_cs = init_val_ns; 
+
+    scan u2(
+             .dipsw7(init_val),
+             .one(one),
+             .ten(ten),
+             .hundred(hundred)
+         );
+
+    // guess
+    always @(posedge clk or negedge rstn) begin
+        if (!rst) begin
+            guess <= ~dip;
+        end
+        else begin
+            if (cs == SET_NUM) begin
+                guess <= ~dip;
+                led <= ~dip;
+            end
+        end
+    end
+
+    // state machine
+    always @(*) begin
+        case(cs)
+            SET_NUM:
+                ns = SET_NUM;
+            GEN_NUM:
+                ns = SET_NUM;
+            default:
+                ns = SET_NUM;
+        endcase
+    end
+
+    // state machine
+    always @(posedge clk or negedge rstn) begin
+        if(!rstn) begin
+            cs <= SET_NUM;
+            init_val_ns = 9'd200;
+        end
+        else begin
+            cs <= ns;
+        end
+    end
+
+endmodule //Top

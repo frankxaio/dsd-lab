@@ -1,0 +1,513 @@
+Analysis & Synthesis report for random_num
+Tue May  7 11:57:28 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Top|cs
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |Top
+ 14. Parameter Settings for Inferred Entity Instance: Pseudo_Random:u1|lpm_divide:Mod0
+ 15. Port Connectivity Checks: "edge_detect:u6"
+ 16. Port Connectivity Checks: "edge_detect:u5"
+ 17. Port Connectivity Checks: "edge_detect:u4"
+ 18. Port Connectivity Checks: "scan:u3"
+ 19. Port Connectivity Checks: "Pseudo_Random:u1"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May  7 11:57:28 2024          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; random_num                                     ;
+; Top-level Entity Name           ; Top                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 80                                             ;
+; Total pins                      ; 47                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; Top                ; random_num         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; src/Top.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/Top.v                                ;         ;
+; src/scan.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/scan.v                               ;         ;
+; src/Pseudo_Random.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v                      ;         ;
+; src/binary_to_BCD.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v                      ;         ;
+; src/edge_detect.v                ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/edge_detect.v                        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
+; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Desktop/dsd-lab/db/lpm_divide_42m.tdf                    ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Desktop/dsd-lab/db/sign_div_unsign_7kh.tdf               ;         ;
+; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Desktop/dsd-lab/db/alt_u_div_kse.tdf                     ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 92         ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 162        ;
+;     -- 7 input functions                    ; 0          ;
+;     -- 6 input functions                    ; 20         ;
+;     -- 5 input functions                    ; 12         ;
+;     -- 4 input functions                    ; 46         ;
+;     -- <=3 input functions                  ; 84         ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 80         ;
+;                                             ;            ;
+; I/O pins                                    ; 47         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; rstn~input ;
+; Maximum fan-out                             ; 91         ;
+; Total fan-out                               ; 931        ;
+; Average fan-out                             ; 2.77       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Top                                      ; 162 (75)            ; 80 (34)                   ; 0                 ; 0          ; 47   ; 0            ; |Top                                                                                                                  ; Top                 ; work         ;
+;    |Pseudo_Random:u1|                     ; 52 (46)             ; 43 (43)                   ; 0                 ; 0          ; 0    ; 0            ; |Top|Pseudo_Random:u1                                                                                                 ; Pseudo_Random       ; work         ;
+;       |lpm_divide:Mod0|                   ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|Pseudo_Random:u1|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_42m:auto_generated|  ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|Pseudo_Random:u1|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m      ; work         ;
+;             |sign_div_unsign_7kh:divider| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|Pseudo_Random:u1|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                |alt_u_div_kse:divider|    ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|Pseudo_Random:u1|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
+;    |edge_detect:u4|                       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|edge_detect:u4                                                                                                   ; edge_detect         ; work         ;
+;    |edge_detect:u5|                       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|edge_detect:u5                                                                                                   ; edge_detect         ; work         ;
+;    |edge_detect:u6|                       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|edge_detect:u6                                                                                                   ; edge_detect         ; work         ;
+;    |scan:u2|                              ; 28 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|scan:u2                                                                                                          ; scan                ; work         ;
+;       |binary_to_BCD:u1|                  ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|scan:u2|binary_to_BCD:u1                                                                                         ; binary_to_BCD       ; work         ;
+;    |scan:u3|                              ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top|scan:u3                                                                                                          ; scan                ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------+
+; State Machine - |Top|cs                             ;
++-------------+------------+-------------+------------+
+; Name        ; cs.SET_NUM ; cs.SHOW_NUM ; cs.GEN_NUM ;
++-------------+------------+-------------+------------+
+; cs.SET_NUM  ; 0          ; 0           ; 0          ;
+; cs.GEN_NUM  ; 1          ; 0           ; 1          ;
+; cs.SHOW_NUM ; 1          ; 1           ; 0          ;
++-------------+------------+-------------+------------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; Pseudo_Random:u1|random_num[4..6]     ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 80    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 76    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; init_val_cs[3]                         ; 12      ;
+; init_val_cs[7]                         ; 12      ;
+; init_val_cs[6]                         ; 12      ;
+; Pseudo_Random:u1|lfsr[6]               ; 1       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Top|init_val_cs[5]        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Top|guess[2]~reg0         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Top|init_val_cs[3]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Top ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; SET_NUM        ; 00    ; Unsigned Binary                            ;
+; GEN_NUM        ; 01    ; Unsigned Binary                            ;
+; SHOW_NUM       ; 10    ; Unsigned Binary                            ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Pseudo_Random:u1|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                                 ;
+; LPM_WIDTHD             ; 4              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_42m ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "edge_detect:u6"                                                                                            ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rising ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; both   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "edge_detect:u5"                                                                                            ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rising ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; both   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "edge_detect:u4"                                                                                            ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rising ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; both   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "scan:u3"                                                                                                                                          ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                        ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; dipsw7  ; Input  ; Warning  ; Input port expression (7 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "dipsw7[7..7]" will be connected to GND. ;
+; ten     ; Output ; Info     ; Explicitly unconnected                                                                                                                         ;
+; hundred ; Output ; Info     ; Explicitly unconnected                                                                                                                         ;
++---------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Pseudo_Random:u1"                                                                                                                   ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+; random_num ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "random_num[7..7]" have no fanouts ;
++------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 80                          ;
+;     CLR               ; 9                           ;
+;     CLR SCLR          ; 32                          ;
+;     ENA               ; 4                           ;
+;     ENA CLR           ; 35                          ;
+; arriav_lcell_comb     ; 169                         ;
+;     arith             ; 44                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 40                          ;
+;         2 data inputs ; 2                           ;
+;         5 data inputs ; 1                           ;
+;     normal            ; 110                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 44                          ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 20                          ;
+;     shared            ; 15                          ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 2                           ;
+; boundary_port         ; 47                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.77                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Tue May  7 11:57:22 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off random_num -c random_num
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/top.v
+    Info (12023): Found entity 1: Top File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/scan.v
+    Info (12023): Found entity 1: scan File: C:/Users/Xaio/Desktop/dsd-lab/src/scan.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/pseudo_random.v
+    Info (12023): Found entity 1: Pseudo_Random File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/debounce.v
+    Info (12023): Found entity 1: Debounce File: C:/Users/Xaio/Desktop/dsd-lab/src/Debounce.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/d_ff.v
+    Info (12023): Found entity 1: D_FF File: C:/Users/Xaio/Desktop/dsd-lab/src/D_FF.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file src/binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_BCD File: C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/add3.v
+    Info (12023): Found entity 1: add3 File: C:/Users/Xaio/Desktop/dsd-lab/src/add3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/edge_detect.v
+    Info (12023): Found entity 1: edge_detect File: C:/Users/Xaio/Desktop/dsd-lab/src/edge_detect.v Line: 1
+Info (12127): Elaborating entity "Top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Top.v(167): truncated value with size 32 to match size of target (8) File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 167
+Warning (10230): Verilog HDL assignment warning at Top.v(177): truncated value with size 9 to match size of target (8) File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 177
+Info (12128): Elaborating entity "Pseudo_Random" for hierarchy "Pseudo_Random:u1" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 30
+Info (12128): Elaborating entity "scan" for hierarchy "scan:u2" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 39
+Info (12128): Elaborating entity "binary_to_BCD" for hierarchy "scan:u2|binary_to_BCD:u1" File: C:/Users/Xaio/Desktop/dsd-lab/src/scan.v Line: 9
+Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(17): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v Line: 17
+Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(15): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v Line: 15
+Info (12128): Elaborating entity "edge_detect" for hierarchy "edge_detect:u4" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 53
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Pseudo_Random:u1|Mod0" File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 21
+Info (12130): Elaborated megafunction instantiation "Pseudo_Random:u1|lpm_divide:Mod0" File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 21
+Info (12133): Instantiated megafunction "Pseudo_Random:u1|lpm_divide:Mod0" with the following parameter: File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 21
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_42m.tdf
+    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/Xaio/Desktop/dsd-lab/db/lpm_divide_42m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/Xaio/Desktop/dsd-lab/db/sign_div_unsign_7kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
+    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/Xaio/Desktop/dsd-lab/db/alt_u_div_kse.tdf Line: 23
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "guess[0]~reg0" is converted into an equivalent circuit using register "guess[0]~reg0_emulated" and latch "guess[0]~1" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[1]~reg0" is converted into an equivalent circuit using register "guess[1]~reg0_emulated" and latch "guess[1]~5" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[2]~reg0" is converted into an equivalent circuit using register "guess[2]~reg0_emulated" and latch "guess[2]~9" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[3]~reg0" is converted into an equivalent circuit using register "guess[3]~reg0_emulated" and latch "guess[3]~13" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[4]~reg0" is converted into an equivalent circuit using register "guess[4]~reg0_emulated" and latch "guess[4]~17" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[5]~reg0" is converted into an equivalent circuit using register "guess[5]~reg0_emulated" and latch "guess[5]~21" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[6]~reg0" is converted into an equivalent circuit using register "guess[6]~reg0_emulated" and latch "guess[6]~25" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hundred[1]" is stuck at GND File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 225 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21061): Implemented 178 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4883 megabytes
+    Info: Processing ended: Tue May  7 11:57:28 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
+
+

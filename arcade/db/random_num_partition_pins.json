@@ -1,0 +1,193 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "guess[0]",
+					"strict" : false
+				},
+				{
+					"name" : "guess[1]",
+					"strict" : false
+				},
+				{
+					"name" : "guess[2]",
+					"strict" : false
+				},
+				{
+					"name" : "guess[3]",
+					"strict" : false
+				},
+				{
+					"name" : "guess[4]",
+					"strict" : false
+				},
+				{
+					"name" : "guess[5]",
+					"strict" : false
+				},
+				{
+					"name" : "guess[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "one[0]",
+					"strict" : false
+				},
+				{
+					"name" : "one[1]",
+					"strict" : false
+				},
+				{
+					"name" : "one[2]",
+					"strict" : false
+				},
+				{
+					"name" : "one[3]",
+					"strict" : false
+				},
+				{
+					"name" : "one[4]",
+					"strict" : false
+				},
+				{
+					"name" : "one[5]",
+					"strict" : false
+				},
+				{
+					"name" : "one[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ten[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hundred[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hundred[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hundred[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hundred[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hundred[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hundred[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rstn",
+					"strict" : false
+				},
+				{
+					"name" : "dip[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dip[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dip[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dip[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dip[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dip[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dip[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "start",
+					"strict" : false
+				},
+				{
+					"name" : "stop",
+					"strict" : false
+				},
+				{
+					"name" : "restart",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

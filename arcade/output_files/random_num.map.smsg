@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at Top.v(89): always construct contains both blocking and non-blocking assignments File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 89
