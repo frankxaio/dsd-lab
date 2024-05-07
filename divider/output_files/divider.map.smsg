@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at top.sv(15): object "DBZ" differs only in case from object "dbz" in the same scope File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 15
+Info (10281): Verilog HDL Declaration information at top.sv(15): object "VALID" differs only in case from object "valid" in the same scope File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 15

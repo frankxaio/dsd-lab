@@ -1,0 +1,480 @@
+Analysis & Synthesis report for divider
+Tue May  7 17:06:48 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|cs
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |top
+ 14. Parameter Settings for User Entity Instance: divu_int:u0
+ 15. Port Connectivity Checks: "scan:u5"
+ 16. Port Connectivity Checks: "scan:u4"
+ 17. Port Connectivity Checks: "scan:u3"
+ 18. Port Connectivity Checks: "scan:u2"
+ 19. Port Connectivity Checks: "divu_int:u0"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May  7 17:06:48 2024          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; divider                                        ;
+; Top-level Entity Name           ; top                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 46                                             ;
+; Total pins                      ; 39                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; top                ; divider            ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; src/top.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv          ;         ;
+; src/divu_int.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/divu_int.sv     ;         ;
+; src/scan.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/scan.v          ;         ;
+; src/binary_to_BCD.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/binary_to_BCD.v ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 27        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 46        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 6         ;
+;     -- 5 input functions                    ; 8         ;
+;     -- 4 input functions                    ; 18        ;
+;     -- <=3 input functions                  ; 14        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 46        ;
+;                                             ;           ;
+; I/O pins                                    ; 39        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 46        ;
+; Total fan-out                               ; 437       ;
+; Average fan-out                             ; 2.57      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |top                       ; 46 (8)              ; 46 (20)                   ; 0                 ; 0          ; 39   ; 0            ; |top                ; top         ; work         ;
+;    |divu_int:u0|           ; 24 (24)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |top|divu_int:u0    ; divu_int    ; work         ;
+;    |scan:u2|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|scan:u2        ; scan        ; work         ;
+;    |scan:u3|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|scan:u3        ; scan        ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------+
+; State Machine - |top|cs ;
++----------+--------------+
+; Name     ; cs.VALID     ;
++----------+--------------+
+; cs.IDLE  ; 0            ;
+; cs.VALID ; 1            ;
++----------+--------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; rem_ten[6]~reg0                        ; Merged with val_ten[6]~reg0            ;
+; val_ten[0]~reg0                        ; Merged with val_ten[5]~reg0            ;
+; val_ten[3]~reg0                        ; Merged with val_ten[4]~reg0            ;
+; val_ten[1]~reg0                        ; Merged with val_ten[2]~reg0            ;
+; rem_ten[1]~reg0                        ; Merged with val_ten[2]~reg0            ;
+; rem_ten[2]~reg0                        ; Merged with val_ten[2]~reg0            ;
+; rem_ten[0]~reg0                        ; Merged with rem_ten[5]~reg0            ;
+; rem_ten[3]~reg0                        ; Merged with rem_ten[4]~reg0            ;
+; val_ten[2]~reg0                        ; Stuck at GND due to stuck port data_in ;
+; cs~5                                   ; Lost fanout                            ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 46    ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 39    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; val_one[6]~reg0                        ; 1       ;
+; val_ten[6]~reg0                        ; 3       ;
+; rem_one[6]~reg0                        ; 1       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|divu_int:u0|acc[4]    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|divu_int:u0|quo[2]    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|val_one[2]~reg0       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |top|divu_int:u0|val[0]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|divu_int:u0|i[0]      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|rem_one[6]~reg0       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; WIDTH          ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divu_int:u0 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; WIDTH          ; 4     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "scan:u5"                       ;
++--------------+--------+----------+------------------------+
+; Port         ; Type   ; Severity ; Details                ;
++--------------+--------+----------+------------------------+
+; dipsw7[6..5] ; Input  ; Info     ; Stuck at VCC           ;
+; dipsw7[1..0] ; Input  ; Info     ; Stuck at VCC           ;
+; dipsw7[4..2] ; Input  ; Info     ; Stuck at GND           ;
+; dipsw7[7]    ; Input  ; Info     ; Stuck at GND           ;
+; hundred      ; Output ; Info     ; Explicitly unconnected ;
++--------------+--------+----------+------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "scan:u4"                       ;
++--------------+--------+----------+------------------------+
+; Port         ; Type   ; Severity ; Details                ;
++--------------+--------+----------+------------------------+
+; dipsw7[6..5] ; Input  ; Info     ; Stuck at VCC           ;
+; dipsw7[1..0] ; Input  ; Info     ; Stuck at VCC           ;
+; dipsw7[4..2] ; Input  ; Info     ; Stuck at GND           ;
+; dipsw7[7]    ; Input  ; Info     ; Stuck at GND           ;
+; hundred      ; Output ; Info     ; Explicitly unconnected ;
++--------------+--------+----------+------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "scan:u3"                       ;
++--------------+--------+----------+------------------------+
+; Port         ; Type   ; Severity ; Details                ;
++--------------+--------+----------+------------------------+
+; dipsw7[7..4] ; Input  ; Info     ; Stuck at GND           ;
+; hundred      ; Output ; Info     ; Explicitly unconnected ;
++--------------+--------+----------+------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "scan:u2"                       ;
++--------------+--------+----------+------------------------+
+; Port         ; Type   ; Severity ; Details                ;
++--------------+--------+----------+------------------------+
+; dipsw7[7..4] ; Input  ; Info     ; Stuck at GND           ;
+; hundred      ; Output ; Info     ; Explicitly unconnected ;
++--------------+--------+----------+------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "divu_int:u0"           ;
++------+--------+----------+------------------------+
+; Port ; Type   ; Severity ; Details                ;
++------+--------+----------+------------------------+
+; busy ; Output ; Info     ; Explicitly unconnected ;
+; done ; Output ; Info     ; Explicitly unconnected ;
++------+--------+----------+------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 46                          ;
+;     CLR               ; 2                           ;
+;     ENA               ; 9                           ;
+;     ENA CLR           ; 6                           ;
+;     ENA CLR SCLR      ; 8                           ;
+;     ENA CLR SLD       ; 4                           ;
+;     ENA SCLR          ; 8                           ;
+;     ENA SCLR SLD      ; 4                           ;
+;     SCLR              ; 3                           ;
+;     SCLR SLD          ; 1                           ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 49                          ;
+;     normal            ; 45                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 6                           ;
+;     shared            ; 4                           ;
+;         2 data inputs ; 4                           ;
+; boundary_port         ; 39                          ;
+;                       ;                             ;
+; Max LUT depth         ; 2.30                        ;
+; Average LUT depth     ; 1.19                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Tue May  7 17:06:42 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off divider -c divider
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/top_tb.sv
+    Info (12023): Found entity 1: top_tb File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file src/divu.sv
+    Info (12023): Found entity 1: divu File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/divu.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/top.sv
+    Info (12023): Found entity 1: top File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/divu_int.sv
+    Info (12023): Found entity 1: divu_int File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/divu_int.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/scan.v
+    Info (12023): Found entity 1: scan File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/scan.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_BCD File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/binary_to_BCD.v Line: 1
+Warning (10222): Verilog HDL Parameter Declaration warning at top.sv(15): Parameter Declaration in module "top" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 15
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "divu_int" for hierarchy "divu_int:u0" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at divu_int.sv(54): truncated value with size 32 to match size of target (2) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/divu_int.sv Line: 54
+Info (12128): Elaborating entity "scan" for hierarchy "scan:u2" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 45
+Info (12128): Elaborating entity "binary_to_BCD" for hierarchy "scan:u2|binary_to_BCD:u1" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/scan.v Line: 9
+Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(17): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/binary_to_BCD.v Line: 17
+Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(15): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/binary_to_BCD.v Line: 15
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "val_ten[1]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 101
+    Warning (13410): Pin "val_ten[2]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 101
+    Warning (13410): Pin "rem_ten[1]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 101
+    Warning (13410): Pin "rem_ten[2]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/src/top.sv Line: 101
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/output_files/divider.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 58 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Tue May  7 17:06:48 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Xaio/Documents/GitHub/dsd-lab/divider/output_files/divider.map.smsg.
+
+

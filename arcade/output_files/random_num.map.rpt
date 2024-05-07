@@ -1,5 +1,5 @@
 Analysis & Synthesis report for random_num
-Tue May  7 11:57:28 2024
+Tue May  7 13:00:51 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May  7 11:57:28 2024          ;
+; Analysis & Synthesis Status     ; Successful - Tue May  7 13:00:51 2024          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; random_num                                     ;
 ; Top-level Entity Name           ; Top                                            ;
@@ -178,24 +178,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
-; src/Top.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/Top.v                                ;         ;
-; src/scan.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/scan.v                               ;         ;
-; src/Pseudo_Random.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v                      ;         ;
-; src/binary_to_BCD.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v                      ;         ;
-; src/edge_detect.v                ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Desktop/dsd-lab/src/edge_detect.v                        ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/aglobal231.inc      ;         ;
-; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Desktop/dsd-lab/db/lpm_divide_42m.tdf                    ;         ;
-; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Desktop/dsd-lab/db/sign_div_unsign_7kh.tdf               ;         ;
-; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Desktop/dsd-lab/db/alt_u_div_kse.tdf                     ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
+; src/Top.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v                  ;         ;
+; src/scan.v                       ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/scan.v                 ;         ;
+; src/Pseudo_Random.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Pseudo_Random.v        ;         ;
+; src/binary_to_BCD.v              ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/binary_to_BCD.v        ;         ;
+; src/edge_detect.v                ; yes             ; User Verilog HDL File        ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/edge_detect.v          ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; d:/altera/fpgalite/quartus/libraries/megafunctions/aglobal231.inc        ;         ;
+; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/db/lpm_divide_42m.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/db/alt_u_div_kse.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -443,60 +443,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue May  7 11:57:22 2024
+    Info: Processing started: Tue May  7 13:00:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off random_num -c random_num
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file src/top.v
-    Info (12023): Found entity 1: Top File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 1
+    Info (12023): Found entity 1: Top File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/scan.v
-    Info (12023): Found entity 1: scan File: C:/Users/Xaio/Desktop/dsd-lab/src/scan.v Line: 1
+    Info (12023): Found entity 1: scan File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/scan.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/pseudo_random.v
-    Info (12023): Found entity 1: Pseudo_Random File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 1
+    Info (12023): Found entity 1: Pseudo_Random File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Pseudo_Random.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/debounce.v
-    Info (12023): Found entity 1: Debounce File: C:/Users/Xaio/Desktop/dsd-lab/src/Debounce.v Line: 1
+    Info (12023): Found entity 1: Debounce File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Debounce.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/d_ff.v
-    Info (12023): Found entity 1: D_FF File: C:/Users/Xaio/Desktop/dsd-lab/src/D_FF.v Line: 21
+    Info (12023): Found entity 1: D_FF File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/D_FF.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file src/binary_to_bcd.v
-    Info (12023): Found entity 1: binary_to_BCD File: C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v Line: 1
+    Info (12023): Found entity 1: binary_to_BCD File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/binary_to_BCD.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/add3.v
-    Info (12023): Found entity 1: add3 File: C:/Users/Xaio/Desktop/dsd-lab/src/add3.v Line: 1
+    Info (12023): Found entity 1: add3 File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/add3.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file src/edge_detect.v
-    Info (12023): Found entity 1: edge_detect File: C:/Users/Xaio/Desktop/dsd-lab/src/edge_detect.v Line: 1
+    Info (12023): Found entity 1: edge_detect File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/edge_detect.v Line: 1
 Info (12127): Elaborating entity "Top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Top.v(167): truncated value with size 32 to match size of target (8) File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 167
-Warning (10230): Verilog HDL assignment warning at Top.v(177): truncated value with size 9 to match size of target (8) File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 177
-Info (12128): Elaborating entity "Pseudo_Random" for hierarchy "Pseudo_Random:u1" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 30
-Info (12128): Elaborating entity "scan" for hierarchy "scan:u2" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 39
-Info (12128): Elaborating entity "binary_to_BCD" for hierarchy "scan:u2|binary_to_BCD:u1" File: C:/Users/Xaio/Desktop/dsd-lab/src/scan.v Line: 9
-Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(17): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v Line: 17
-Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(15): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Desktop/dsd-lab/src/binary_to_BCD.v Line: 15
-Info (12128): Elaborating entity "edge_detect" for hierarchy "edge_detect:u4" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 53
+Warning (10230): Verilog HDL assignment warning at Top.v(167): truncated value with size 32 to match size of target (8) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 167
+Warning (10230): Verilog HDL assignment warning at Top.v(177): truncated value with size 9 to match size of target (8) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 177
+Info (12128): Elaborating entity "Pseudo_Random" for hierarchy "Pseudo_Random:u1" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 30
+Info (12128): Elaborating entity "scan" for hierarchy "scan:u2" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 39
+Info (12128): Elaborating entity "binary_to_BCD" for hierarchy "scan:u2|binary_to_BCD:u1" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/scan.v Line: 9
+Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(17): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/binary_to_BCD.v Line: 17
+Warning (10230): Verilog HDL assignment warning at binary_to_BCD.v(15): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/binary_to_BCD.v Line: 15
+Info (12128): Elaborating entity "edge_detect" for hierarchy "edge_detect:u4" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 53
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Pseudo_Random:u1|Mod0" File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 21
-Info (12130): Elaborated megafunction instantiation "Pseudo_Random:u1|lpm_divide:Mod0" File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 21
-Info (12133): Instantiated megafunction "Pseudo_Random:u1|lpm_divide:Mod0" with the following parameter: File: C:/Users/Xaio/Desktop/dsd-lab/src/Pseudo_Random.v Line: 21
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Pseudo_Random:u1|Mod0" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Pseudo_Random.v Line: 21
+Info (12130): Elaborated megafunction instantiation "Pseudo_Random:u1|lpm_divide:Mod0" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Pseudo_Random.v Line: 21
+Info (12133): Instantiated megafunction "Pseudo_Random:u1|lpm_divide:Mod0" with the following parameter: File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Pseudo_Random.v Line: 21
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_42m.tdf
-    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/Xaio/Desktop/dsd-lab/db/lpm_divide_42m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/db/lpm_divide_42m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/Xaio/Desktop/dsd-lab/db/sign_div_unsign_7kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/db/sign_div_unsign_7kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
-    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/Xaio/Desktop/dsd-lab/db/alt_u_div_kse.tdf Line: 23
+    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/db/alt_u_div_kse.tdf Line: 23
 Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "guess[0]~reg0" is converted into an equivalent circuit using register "guess[0]~reg0_emulated" and latch "guess[0]~1" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
-    Warning (13310): Register "guess[1]~reg0" is converted into an equivalent circuit using register "guess[1]~reg0_emulated" and latch "guess[1]~5" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
-    Warning (13310): Register "guess[2]~reg0" is converted into an equivalent circuit using register "guess[2]~reg0_emulated" and latch "guess[2]~9" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
-    Warning (13310): Register "guess[3]~reg0" is converted into an equivalent circuit using register "guess[3]~reg0_emulated" and latch "guess[3]~13" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
-    Warning (13310): Register "guess[4]~reg0" is converted into an equivalent circuit using register "guess[4]~reg0_emulated" and latch "guess[4]~17" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
-    Warning (13310): Register "guess[5]~reg0" is converted into an equivalent circuit using register "guess[5]~reg0_emulated" and latch "guess[5]~21" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
-    Warning (13310): Register "guess[6]~reg0" is converted into an equivalent circuit using register "guess[6]~reg0_emulated" and latch "guess[6]~25" File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 117
+    Warning (13310): Register "guess[0]~reg0" is converted into an equivalent circuit using register "guess[0]~reg0_emulated" and latch "guess[0]~1" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
+    Warning (13310): Register "guess[1]~reg0" is converted into an equivalent circuit using register "guess[1]~reg0_emulated" and latch "guess[1]~5" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
+    Warning (13310): Register "guess[2]~reg0" is converted into an equivalent circuit using register "guess[2]~reg0_emulated" and latch "guess[2]~9" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
+    Warning (13310): Register "guess[3]~reg0" is converted into an equivalent circuit using register "guess[3]~reg0_emulated" and latch "guess[3]~13" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
+    Warning (13310): Register "guess[4]~reg0" is converted into an equivalent circuit using register "guess[4]~reg0_emulated" and latch "guess[4]~17" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
+    Warning (13310): Register "guess[5]~reg0" is converted into an equivalent circuit using register "guess[5]~reg0_emulated" and latch "guess[5]~21" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
+    Warning (13310): Register "guess[6]~reg0" is converted into an equivalent circuit using register "guess[6]~reg0_emulated" and latch "guess[6]~25" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 117
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "hundred[1]" is stuck at GND File: C:/Users/Xaio/Desktop/dsd-lab/src/Top.v Line: 13
+    Warning (13410): Pin "hundred[1]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/arcade/src/Top.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -505,9 +505,9 @@ Info (21057): Implemented 225 device resources after synthesis - the final resou
     Info (21059): Implemented 35 output pins
     Info (21061): Implemented 178 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 4883 megabytes
-    Info: Processing ended: Tue May  7 11:57:28 2024
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Tue May  7 13:00:51 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 
