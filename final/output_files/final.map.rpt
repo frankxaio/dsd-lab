@@ -1,0 +1,417 @@
+Analysis & Synthesis report for final
+Tue May 28 16:42:35 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|debouncing_button:db_m1|state_reg
+  9. State Machine - |top|debouncing_button:db_m0|state_reg
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue May 28 16:42:35 2024          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; final                                          ;
+; Top-level Entity Name           ; top                                            ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 72                                             ;
+; Total pins                      ; 54                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; top                ; final              ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; src/scan.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/scan.sv                ;         ;
+; src/top.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv                 ;         ;
+; src/parking_lot_counter.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/parking_lot_counter.sv ;         ;
+; src/debouncing_button.sv         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/debouncing_button.sv   ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 156       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 244       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 68        ;
+;     -- 5 input functions                    ; 28        ;
+;     -- 4 input functions                    ; 41        ;
+;     -- <=3 input functions                  ; 107       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 72        ;
+;                                             ;           ;
+; I/O pins                                    ; 54        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 72        ;
+; Total fan-out                               ; 1286      ;
+; Average fan-out                             ; 3.03      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name         ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+---------------------+--------------+
+; |top                            ; 244 (5)             ; 72 (4)                    ; 0                 ; 0          ; 54   ; 0            ; |top                            ; top                 ; work         ;
+;    |debouncing_button:db_m0|    ; 28 (28)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |top|debouncing_button:db_m0    ; debouncing_button   ; work         ;
+;    |debouncing_button:db_m1|    ; 12 (12)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |top|debouncing_button:db_m1    ; debouncing_button   ; work         ;
+;    |parking_lot_counter:lot_m0| ; 191 (191)           ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |top|parking_lot_counter:lot_m0 ; parking_lot_counter ; work         ;
+;    |scan:scan_m0|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|scan:scan_m0               ; scan                ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|debouncing_button:db_m1|state_reg                                                                       ;
++------------------+------------------+------------------+---------------+------------------+------------------+---------------+
+; Name             ; state_reg.mid1_2 ; state_reg.mid1_1 ; state_reg.one ; state_reg.mid0_2 ; state_reg.mid0_1 ; state_reg.000 ;
++------------------+------------------+------------------+---------------+------------------+------------------+---------------+
+; state_reg.000    ; 0                ; 0                ; 0             ; 0                ; 0                ; 0             ;
+; state_reg.mid0_1 ; 0                ; 0                ; 0             ; 0                ; 1                ; 1             ;
+; state_reg.mid0_2 ; 0                ; 0                ; 0             ; 1                ; 0                ; 1             ;
+; state_reg.one    ; 0                ; 0                ; 1             ; 0                ; 0                ; 1             ;
+; state_reg.mid1_1 ; 0                ; 1                ; 0             ; 0                ; 0                ; 1             ;
+; state_reg.mid1_2 ; 1                ; 0                ; 0             ; 0                ; 0                ; 1             ;
++------------------+------------------+------------------+---------------+------------------+------------------+---------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|debouncing_button:db_m0|state_reg                                                                       ;
++------------------+------------------+------------------+---------------+------------------+------------------+---------------+
+; Name             ; state_reg.mid1_2 ; state_reg.mid1_1 ; state_reg.one ; state_reg.mid0_2 ; state_reg.mid0_1 ; state_reg.000 ;
++------------------+------------------+------------------+---------------+------------------+------------------+---------------+
+; state_reg.000    ; 0                ; 0                ; 0             ; 0                ; 0                ; 0             ;
+; state_reg.mid0_1 ; 0                ; 0                ; 0             ; 0                ; 1                ; 1             ;
+; state_reg.mid0_2 ; 0                ; 0                ; 0             ; 1                ; 0                ; 1             ;
+; state_reg.one    ; 0                ; 0                ; 1             ; 0                ; 0                ; 1             ;
+; state_reg.mid1_1 ; 0                ; 1                ; 0             ; 0                ; 0                ; 1             ;
+; state_reg.mid1_2 ; 1                ; 0                ; 0             ; 0                ; 0                ; 1             ;
++------------------+------------------+------------------+---------------+------------------+------------------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                       ;
++---------------------------------------------------+------------------------------------------------------+
+; Register name                                     ; Reason for Removal                                   ;
++---------------------------------------------------+------------------------------------------------------+
+; parking_lot_counter:lot_m0|state_reg[4..9,11..31] ; Merged with parking_lot_counter:lot_m0|state_reg[10] ;
+; debouncing_button:db_m1|counter[19]               ; Merged with debouncing_button:db_m0|counter[19]      ;
+; debouncing_button:db_m1|counter[18]               ; Merged with debouncing_button:db_m0|counter[18]      ;
+; debouncing_button:db_m1|counter[17]               ; Merged with debouncing_button:db_m0|counter[17]      ;
+; debouncing_button:db_m1|counter[16]               ; Merged with debouncing_button:db_m0|counter[16]      ;
+; debouncing_button:db_m1|counter[15]               ; Merged with debouncing_button:db_m0|counter[15]      ;
+; debouncing_button:db_m1|counter[14]               ; Merged with debouncing_button:db_m0|counter[14]      ;
+; debouncing_button:db_m1|counter[13]               ; Merged with debouncing_button:db_m0|counter[13]      ;
+; debouncing_button:db_m1|counter[12]               ; Merged with debouncing_button:db_m0|counter[12]      ;
+; debouncing_button:db_m1|counter[11]               ; Merged with debouncing_button:db_m0|counter[11]      ;
+; debouncing_button:db_m1|counter[10]               ; Merged with debouncing_button:db_m0|counter[10]      ;
+; debouncing_button:db_m1|counter[9]                ; Merged with debouncing_button:db_m0|counter[9]       ;
+; debouncing_button:db_m1|counter[8]                ; Merged with debouncing_button:db_m0|counter[8]       ;
+; debouncing_button:db_m1|counter[7]                ; Merged with debouncing_button:db_m0|counter[7]       ;
+; debouncing_button:db_m1|counter[6]                ; Merged with debouncing_button:db_m0|counter[6]       ;
+; debouncing_button:db_m1|counter[5]                ; Merged with debouncing_button:db_m0|counter[5]       ;
+; debouncing_button:db_m1|counter[4]                ; Merged with debouncing_button:db_m0|counter[4]       ;
+; debouncing_button:db_m1|counter[3]                ; Merged with debouncing_button:db_m0|counter[3]       ;
+; debouncing_button:db_m1|counter[2]                ; Merged with debouncing_button:db_m0|counter[2]       ;
+; debouncing_button:db_m1|counter[1]                ; Merged with debouncing_button:db_m0|counter[1]       ;
+; debouncing_button:db_m1|counter[0]                ; Merged with debouncing_button:db_m0|counter[0]       ;
+; parking_lot_counter:lot_m0|state_reg[10]          ; Stuck at GND due to stuck port data_in               ;
+; debouncing_button:db_m1|state_reg~4               ; Lost fanout                                          ;
+; debouncing_button:db_m1|state_reg~5               ; Lost fanout                                          ;
+; debouncing_button:db_m1|state_reg~6               ; Lost fanout                                          ;
+; debouncing_button:db_m0|state_reg~4               ; Lost fanout                                          ;
+; debouncing_button:db_m0|state_reg~5               ; Lost fanout                                          ;
+; debouncing_button:db_m0|state_reg~6               ; Lost fanout                                          ;
+; Total Number of Removed Registers = 54            ;                                                      ;
++---------------------------------------------------+------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 72    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 72    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|parking_lot_counter:lot_m0|state_reg[0] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |top|debouncing_button:db_m1|Selector1       ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |top|debouncing_button:db_m0|Selector1       ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top|parking_lot_counter:lot_m0|led[3]       ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |top|parking_lot_counter:lot_m0|led[6]       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 72                          ;
+;     CLR               ; 36                          ;
+;     CLR SCLR          ; 32                          ;
+;     ENA CLR           ; 4                           ;
+; arriav_lcell_comb     ; 249                         ;
+;     arith             ; 51                          ;
+;         1 data inputs ; 50                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 198                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 41                          ;
+;         5 data inputs ; 28                          ;
+;         6 data inputs ; 68                          ;
+; boundary_port         ; 54                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.44                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Tue May 28 16:42:29 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final -c final
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/scan.sv
+    Info (12023): Found entity 1: scan File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/scan.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/top.sv
+    Info (12023): Found entity 1: top File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 3
+Warning (12019): Can't analyze file -- file src/parking_lot_counter_TB.sv is missing
+Info (12021): Found 1 design units, including 1 entities, in source file src/parking_lot_counter.sv
+    Info (12023): Found entity 1: parking_lot_counter File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/parking_lot_counter.sv Line: 3
+Warning (12019): Can't analyze file -- file src/LED_mux.sv is missing
+Info (12021): Found 1 design units, including 1 entities, in source file src/debouncing_button.sv
+    Info (12023): Found entity 1: debouncing_button File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/debouncing_button.sv Line: 3
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at top.sv(54): truncated value with size 32 to match size of target (4) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at top.sv(57): truncated value with size 32 to match size of target (1) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 57
+Info (12128): Elaborating entity "debouncing_button" for hierarchy "debouncing_button:db_m0" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at debouncing_button.sv(37): truncated value with size 32 to match size of target (20) File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/debouncing_button.sv Line: 37
+Info (12128): Elaborating entity "parking_lot_counter" for hierarchy "parking_lot_counter:lot_m0" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 47
+Info (12128): Elaborating entity "scan" for hierarchy "scan:scan_m0" File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 59
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "seg_out1[1]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 10
+    Warning (13410): Pin "seg_out1[2]" is stuck at GND File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 10
+    Warning (13410): Pin "seg_out1[6]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 10
+    Warning (13410): Pin "seg_out2[0]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 11
+    Warning (13410): Pin "seg_out2[1]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 11
+    Warning (13410): Pin "seg_out2[2]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 11
+    Warning (13410): Pin "seg_out2[6]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 11
+    Warning (13410): Pin "seg_out3[0]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 12
+    Warning (13410): Pin "seg_out3[1]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 12
+    Warning (13410): Pin "seg_out3[2]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 12
+    Warning (13410): Pin "seg_out3[6]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 12
+    Warning (13410): Pin "seg_out4[0]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 13
+    Warning (13410): Pin "seg_out4[6]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 13
+    Warning (13410): Pin "seg_out5[1]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 17
+    Warning (13410): Pin "seg_out5[2]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 17
+    Warning (13410): Pin "seg_out5[3]" is stuck at VCC File: C:/Users/Xaio/Documents/GitHub/dsd-lab/final/src/top.sv Line: 17
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 298 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 244 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4864 megabytes
+    Info: Processing ended: Tue May 28 16:42:35 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+

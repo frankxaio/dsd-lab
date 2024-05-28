@@ -1,0 +1,161 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_out5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "a",
+					"strict" : false
+				},
+				{
+					"name" : "b",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

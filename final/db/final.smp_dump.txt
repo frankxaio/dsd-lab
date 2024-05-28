@@ -1,0 +1,18 @@
+
+State Machine - |top|debouncing_button:db_m1|state_reg
+Name state_reg.mid1_2 state_reg.mid1_1 state_reg.one state_reg.mid0_2 state_reg.mid0_1 state_reg.000 
+state_reg.000 0 0 0 0 0 0 
+state_reg.mid0_1 0 0 0 0 1 1 
+state_reg.mid0_2 0 0 0 1 0 1 
+state_reg.one 0 0 1 0 0 1 
+state_reg.mid1_1 0 1 0 0 0 1 
+state_reg.mid1_2 1 0 0 0 0 1 
+
+State Machine - |top|debouncing_button:db_m0|state_reg
+Name state_reg.mid1_2 state_reg.mid1_1 state_reg.one state_reg.mid0_2 state_reg.mid0_1 state_reg.000 
+state_reg.000 0 0 0 0 0 0 
+state_reg.mid0_1 0 0 0 0 1 1 
+state_reg.mid0_2 0 0 0 1 0 1 
+state_reg.one 0 0 1 0 0 1 
+state_reg.mid1_1 0 1 0 0 0 1 
+state_reg.mid1_2 1 0 0 0 0 1 
