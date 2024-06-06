@@ -112,6 +112,9 @@ module parking_lot_counter (
         (led_mode) ? 8'b00000000 :  // 全滅
         8'b00000000;  // 全滅
 
+        
+    
+
 
 
 endmodule

@@ -1,0 +1,2528 @@
+Analysis & Synthesis report for lab5
+Fri Jun  7 02:08:51 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |lab5
+ 12. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver
+ 13. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrX
+ 14. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrX|my_dff:myDff
+ 15. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrY
+ 16. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrY|my_dff:myDff
+ 17. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrF
+ 18. Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrF|my_dff:myDff
+ 19. Parameter Settings for User Entity Instance: LV1:LV01
+ 20. Parameter Settings for User Entity Instance: LV1:LV01|setCounter:moveX
+ 21. Parameter Settings for User Entity Instance: LV1:LV01|setCounter:moveX|my_dff:myDff
+ 22. Parameter Settings for User Entity Instance: LV1:LV01|setCounter:moveX|my_dff:onStartDff
+ 23. Parameter Settings for User Entity Instance: LV1:LV01|counter:subLevleCnt
+ 24. Parameter Settings for User Entity Instance: LV1:LV01|counter:subLevleCnt|my_dff:myDff
+ 25. Parameter Settings for User Entity Instance: LV1:LV01|tripSW:tripswitch|my_dff:tripSwitch
+ 26. Parameter Settings for User Entity Instance: LV1:LV01|countCircle:jumpOffset
+ 27. Parameter Settings for User Entity Instance: LV1:LV01|countCircle:jumpOffset|my_dff:myDff
+ 28. Parameter Settings for User Entity Instance: LV1:LV01|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch
+ 29. Parameter Settings for User Entity Instance: LV1:LV01|box:player
+ 30. Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0
+ 31. Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0|box:topFloor
+ 32. Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0|box:midFloor
+ 33. Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0|box:bottomFloor
+ 34. Parameter Settings for User Entity Instance: LV1:LV01|box:sv0b0
+ 35. Parameter Settings for User Entity Instance: LV1:LV01|box:sv1b0
+ 36. Parameter Settings for User Entity Instance: LV1:LV01|box:sv1b1
+ 37. Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b0
+ 38. Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b1
+ 39. Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b2
+ 40. Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b3
+ 41. Parameter Settings for User Entity Instance: LV2:LV02
+ 42. Parameter Settings for User Entity Instance: LV2:LV02|setCounter:moveX
+ 43. Parameter Settings for User Entity Instance: LV2:LV02|setCounter:moveX|my_dff:myDff
+ 44. Parameter Settings for User Entity Instance: LV2:LV02|setCounter:moveX|my_dff:onStartDff
+ 45. Parameter Settings for User Entity Instance: LV2:LV02|counter:subLevleCnt
+ 46. Parameter Settings for User Entity Instance: LV2:LV02|counter:subLevleCnt|my_dff:myDff
+ 47. Parameter Settings for User Entity Instance: LV2:LV02|tripSW:tripswitch|my_dff:tripSwitch
+ 48. Parameter Settings for User Entity Instance: LV2:LV02|countCircle:jumpOffset
+ 49. Parameter Settings for User Entity Instance: LV2:LV02|countCircle:jumpOffset|my_dff:myDff
+ 50. Parameter Settings for User Entity Instance: LV2:LV02|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch
+ 51. Parameter Settings for User Entity Instance: LV2:LV02|box:player
+ 52. Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0
+ 53. Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0|box:topFloor
+ 54. Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0|box:midFloor
+ 55. Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0|box:bottomFloor
+ 56. Parameter Settings for User Entity Instance: LV2:LV02|box:sv0b0
+ 57. Parameter Settings for User Entity Instance: LV2:LV02|box:sv0b1
+ 58. Parameter Settings for User Entity Instance: LV2:LV02|box:sv1b0
+ 59. Parameter Settings for User Entity Instance: LV2:LV02|box:sv1b1
+ 60. Parameter Settings for User Entity Instance: LV2:LV02|box:sv1b2
+ 61. Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b0
+ 62. Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b1
+ 63. Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b2
+ 64. Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b3
+ 65. Parameter Settings for User Entity Instance: LV3:LV03
+ 66. Parameter Settings for User Entity Instance: LV3:LV03|setCounter:moveX
+ 67. Parameter Settings for User Entity Instance: LV3:LV03|setCounter:moveX|my_dff:myDff
+ 68. Parameter Settings for User Entity Instance: LV3:LV03|setCounter:moveX|my_dff:onStartDff
+ 69. Parameter Settings for User Entity Instance: LV3:LV03|counter:subLevleCnt
+ 70. Parameter Settings for User Entity Instance: LV3:LV03|counter:subLevleCnt|my_dff:myDff
+ 71. Parameter Settings for User Entity Instance: LV3:LV03|tripSW:tripswitch|my_dff:tripSwitch
+ 72. Parameter Settings for User Entity Instance: LV3:LV03|countCircle:jumpOffset
+ 73. Parameter Settings for User Entity Instance: LV3:LV03|countCircle:jumpOffset|my_dff:myDff
+ 74. Parameter Settings for User Entity Instance: LV3:LV03|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch
+ 75. Parameter Settings for User Entity Instance: LV3:LV03|box:player
+ 76. Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0
+ 77. Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0|box:topFloor
+ 78. Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0|box:midFloor
+ 79. Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0|box:bottomFloor
+ 80. Parameter Settings for User Entity Instance: LV3:LV03|box:sv0b0
+ 81. Parameter Settings for User Entity Instance: LV3:LV03|box:sv0b1
+ 82. Parameter Settings for User Entity Instance: LV3:LV03|box:sv1b0
+ 83. Parameter Settings for User Entity Instance: LV3:LV03|box:sv1b1
+ 84. Parameter Settings for User Entity Instance: LV3:LV03|box:sv1b2
+ 85. Parameter Settings for User Entity Instance: LV3:LV03|box:sv2b0
+ 86. Parameter Settings for User Entity Instance: LV3:LV03|box:sv2b1
+ 87. Parameter Settings for User Entity Instance: LV3:LV03|box:sv2b2
+ 88. Port Connectivity Checks: "LV3:LV03|box:sv2b2"
+ 89. Port Connectivity Checks: "LV3:LV03|box:sv2b1"
+ 90. Port Connectivity Checks: "LV3:LV03|box:sv2b0"
+ 91. Port Connectivity Checks: "LV3:LV03|box:sv1b2"
+ 92. Port Connectivity Checks: "LV3:LV03|box:sv1b1"
+ 93. Port Connectivity Checks: "LV3:LV03|box:sv1b0"
+ 94. Port Connectivity Checks: "LV3:LV03|box:sv0b1"
+ 95. Port Connectivity Checks: "LV3:LV03|box:sv0b0"
+ 96. Port Connectivity Checks: "LV3:LV03|box:player"
+ 97. Port Connectivity Checks: "LV3:LV03|hdis:hex0DIS"
+ 98. Port Connectivity Checks: "LV3:LV03|counter:subLevleCnt"
+ 99. Port Connectivity Checks: "LV3:LV03|setCounter:moveX"
+100. Port Connectivity Checks: "LV3:LV03"
+101. Port Connectivity Checks: "LV2:LV02|box:sv2b3"
+102. Port Connectivity Checks: "LV2:LV02|box:sv2b2"
+103. Port Connectivity Checks: "LV2:LV02|box:sv2b1"
+104. Port Connectivity Checks: "LV2:LV02|box:sv2b0"
+105. Port Connectivity Checks: "LV2:LV02|box:sv1b2"
+106. Port Connectivity Checks: "LV2:LV02|box:sv1b1"
+107. Port Connectivity Checks: "LV2:LV02|box:sv1b0"
+108. Port Connectivity Checks: "LV2:LV02|box:sv0b1"
+109. Port Connectivity Checks: "LV2:LV02|box:sv0b0"
+110. Port Connectivity Checks: "LV2:LV02|box:player"
+111. Port Connectivity Checks: "LV2:LV02|countCircle:jumpOffset|my_dff:myDff"
+112. Port Connectivity Checks: "LV2:LV02|hdis:hex0DIS"
+113. Port Connectivity Checks: "LV2:LV02|counter:subLevleCnt"
+114. Port Connectivity Checks: "LV2:LV02|setCounter:moveX"
+115. Port Connectivity Checks: "LV2:LV02"
+116. Port Connectivity Checks: "LV1:LV01|box:sv2b3"
+117. Port Connectivity Checks: "LV1:LV01|box:sv2b2"
+118. Port Connectivity Checks: "LV1:LV01|box:sv2b1"
+119. Port Connectivity Checks: "LV1:LV01|box:sv2b0"
+120. Port Connectivity Checks: "LV1:LV01|box:sv1b1"
+121. Port Connectivity Checks: "LV1:LV01|box:sv1b0"
+122. Port Connectivity Checks: "LV1:LV01|box:sv0b0"
+123. Port Connectivity Checks: "LV1:LV01|theFloor:theFloor0|box:bottomFloor"
+124. Port Connectivity Checks: "LV1:LV01|theFloor:theFloor0|box:midFloor"
+125. Port Connectivity Checks: "LV1:LV01|theFloor:theFloor0|box:topFloor"
+126. Port Connectivity Checks: "LV1:LV01|box:player"
+127. Port Connectivity Checks: "LV1:LV01|countCircle:jumpOffset|my_dff:myDff"
+128. Port Connectivity Checks: "LV1:LV01|hdis:hex0DIS"
+129. Port Connectivity Checks: "LV1:LV01|counter:subLevleCnt|my_dff:myDff"
+130. Port Connectivity Checks: "LV1:LV01|counter:subLevleCnt"
+131. Port Connectivity Checks: "LV1:LV01|setCounter:moveX|my_dff:onStartDff"
+132. Port Connectivity Checks: "LV1:LV01|setCounter:moveX|my_dff:myDff"
+133. Port Connectivity Checks: "LV1:LV01|setCounter:moveX"
+134. Port Connectivity Checks: "LV1:LV01"
+135. Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrF|my_dff:myDff"
+136. Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrF"
+137. Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrY|my_dff:myDff"
+138. Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrY"
+139. Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrX|my_dff:myDff"
+140. Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrX"
+141. Port Connectivity Checks: "vgaCtl:vgaDriver"
+142. Post-Synthesis Netlist Statistics for Top Partition
+143. Elapsed Time Per Partition
+144. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Jun  7 02:08:51 2024          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; lab5                                           ;
+; Top-level Entity Name           ; lab5                                           ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 88                                             ;
+; Total pins                      ; 25                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; lab5               ; lab5               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
+; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; LV3.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV3.sv         ;         ;
+; LV2.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV2.sv         ;         ;
+; tripSW.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/tripSW.sv      ;         ;
+; hdis.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/hdis.sv        ;         ;
+; countCircle.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv ;         ;
+; theFloor.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/theFloor.sv    ;         ;
+; LV1.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv         ;         ;
+; setCounter.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/setCounter.sv  ;         ;
+; vgaCtl.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv      ;         ;
+; my_dff.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/my_dff.sv      ;         ;
+; lab5.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv        ;         ;
+; counter.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv     ;         ;
+; clock.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/clock.sv       ;         ;
+; box.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Xaio/Downloads/Space_Is_Key0-main/box.sv         ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 670                      ;
+;                                             ;                          ;
+; Combinational ALUT usage for logic          ; 974                      ;
+;     -- 7 input functions                    ; 3                        ;
+;     -- 6 input functions                    ; 363                      ;
+;     -- 5 input functions                    ; 168                      ;
+;     -- 4 input functions                    ; 96                       ;
+;     -- <=3 input functions                  ; 344                      ;
+;                                             ;                          ;
+; Dedicated logic registers                   ; 88                       ;
+;                                             ;                          ;
+; I/O pins                                    ; 25                       ;
+;                                             ;                          ;
+; Total DSP Blocks                            ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; vgaCtl:vgaDriver|pix_v~3 ;
+; Maximum fan-out                             ; 120                      ;
+; Total fan-out                               ; 4456                     ;
+; Average fan-out                             ; 4.01                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                               ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Entity Name ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+-------------+--------------+
+; |lab5                           ; 974 (15)            ; 88 (0)                    ; 0                 ; 0          ; 25   ; 0            ; |lab5                                                                     ; lab5        ; work         ;
+;    |LV1:LV01|                   ; 305 (93)            ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01                                                            ; LV1         ; work         ;
+;       |box:player|              ; 68 (68)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:player                                                 ; box         ; work         ;
+;       |box:sv0b0|               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv0b0                                                  ; box         ; work         ;
+;       |box:sv1b0|               ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv1b0                                                  ; box         ; work         ;
+;       |box:sv1b1|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv1b1                                                  ; box         ; work         ;
+;       |box:sv2b0|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv2b0                                                  ; box         ; work         ;
+;       |box:sv2b1|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv2b1                                                  ; box         ; work         ;
+;       |box:sv2b2|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv2b2                                                  ; box         ; work         ;
+;       |box:sv2b3|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|box:sv2b3                                                  ; box         ; work         ;
+;       |countCircle:jumpOffset|  ; 25 (24)             ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|countCircle:jumpOffset                                     ; countCircle ; work         ;
+;          |my_dff:myDff|         ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|countCircle:jumpOffset|my_dff:myDff                        ; my_dff      ; work         ;
+;          |tripSW:tripswitch|    ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|countCircle:jumpOffset|tripSW:tripswitch                   ; tripSW      ; work         ;
+;             |my_dff:tripSwitch| ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch ; my_dff      ; work         ;
+;       |counter:subLevleCnt|     ; 2 (2)               ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|counter:subLevleCnt                                        ; counter     ; work         ;
+;          |my_dff:myDff|         ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|counter:subLevleCnt|my_dff:myDff                           ; my_dff      ; work         ;
+;       |setCounter:moveX|        ; 60 (35)             ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|setCounter:moveX                                           ; setCounter  ; work         ;
+;          |my_dff:myDff|         ; 25 (25)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|setCounter:moveX|my_dff:myDff                              ; my_dff      ; work         ;
+;          |my_dff:onStartDff|    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|setCounter:moveX|my_dff:onStartDff                         ; my_dff      ; work         ;
+;       |theFloor:theFloor0|      ; 21 (9)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|theFloor:theFloor0                                         ; theFloor    ; work         ;
+;          |box:midFloor|         ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|theFloor:theFloor0|box:midFloor                            ; box         ; work         ;
+;       |tripSW:tripswitch|       ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|tripSW:tripswitch                                          ; tripSW      ; work         ;
+;          |my_dff:tripSwitch|    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV1:LV01|tripSW:tripswitch|my_dff:tripSwitch                        ; my_dff      ; work         ;
+;    |LV2:LV02|                   ; 337 (86)            ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02                                                            ; LV2         ; work         ;
+;       |box:player|              ; 68 (68)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:player                                                 ; box         ; work         ;
+;       |box:sv0b0|               ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv0b0                                                  ; box         ; work         ;
+;       |box:sv0b1|               ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv0b1                                                  ; box         ; work         ;
+;       |box:sv1b0|               ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv1b0                                                  ; box         ; work         ;
+;       |box:sv1b1|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv1b1                                                  ; box         ; work         ;
+;       |box:sv1b2|               ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv1b2                                                  ; box         ; work         ;
+;       |box:sv2b0|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv2b0                                                  ; box         ; work         ;
+;       |box:sv2b1|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv2b1                                                  ; box         ; work         ;
+;       |box:sv2b2|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv2b2                                                  ; box         ; work         ;
+;       |box:sv2b3|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|box:sv2b3                                                  ; box         ; work         ;
+;       |countCircle:jumpOffset|  ; 26 (24)             ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|countCircle:jumpOffset                                     ; countCircle ; work         ;
+;          |my_dff:myDff|         ; 0 (0)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|countCircle:jumpOffset|my_dff:myDff                        ; my_dff      ; work         ;
+;          |tripSW:tripswitch|    ; 2 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|countCircle:jumpOffset|tripSW:tripswitch                   ; tripSW      ; work         ;
+;             |my_dff:tripSwitch| ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch ; my_dff      ; work         ;
+;       |counter:subLevleCnt|     ; 2 (2)               ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|counter:subLevleCnt                                        ; counter     ; work         ;
+;          |my_dff:myDff|         ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|counter:subLevleCnt|my_dff:myDff                           ; my_dff      ; work         ;
+;       |setCounter:moveX|        ; 60 (35)             ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|setCounter:moveX                                           ; setCounter  ; work         ;
+;          |my_dff:myDff|         ; 25 (25)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|setCounter:moveX|my_dff:myDff                              ; my_dff      ; work         ;
+;          |my_dff:onStartDff|    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|setCounter:moveX|my_dff:onStartDff                         ; my_dff      ; work         ;
+;       |theFloor:theFloor0|      ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|theFloor:theFloor0                                         ; theFloor    ; work         ;
+;       |tripSW:tripswitch|       ; 1 (0)               ; 1 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|tripSW:tripswitch                                          ; tripSW      ; work         ;
+;          |my_dff:tripSwitch|    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV2:LV02|tripSW:tripswitch|my_dff:tripSwitch                        ; my_dff      ; work         ;
+;    |LV3:LV03|                   ; 229 (59)            ; 15 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03                                                            ; LV3         ; work         ;
+;       |box:player|              ; 58 (58)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:player                                                 ; box         ; work         ;
+;       |box:sv0b0|               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:sv0b0                                                  ; box         ; work         ;
+;       |box:sv0b1|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:sv0b1                                                  ; box         ; work         ;
+;       |box:sv1b1|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:sv1b1                                                  ; box         ; work         ;
+;       |box:sv1b2|               ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:sv1b2                                                  ; box         ; work         ;
+;       |box:sv2b0|               ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:sv2b0                                                  ; box         ; work         ;
+;       |box:sv2b1|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|box:sv2b1                                                  ; box         ; work         ;
+;       |counter:subLevleCnt|     ; 2 (2)               ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|counter:subLevleCnt                                        ; counter     ; work         ;
+;          |my_dff:myDff|         ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|counter:subLevleCnt|my_dff:myDff                           ; my_dff      ; work         ;
+;       |setCounter:moveX|        ; 60 (35)             ; 13 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|setCounter:moveX                                           ; setCounter  ; work         ;
+;          |my_dff:myDff|         ; 25 (25)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|setCounter:moveX|my_dff:myDff                              ; my_dff      ; work         ;
+;          |my_dff:onStartDff|    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|setCounter:moveX|my_dff:onStartDff                         ; my_dff      ; work         ;
+;       |theFloor:theFloor0|      ; 16 (9)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|theFloor:theFloor0                                         ; theFloor    ; work         ;
+;          |box:bottomFloor|      ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|LV3:LV03|theFloor:theFloor0|box:bottomFloor                         ; box         ; work         ;
+;    |clock:clk1|                 ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |lab5|clock:clk1                                                          ; clock       ; work         ;
+;    |vgaCtl:vgaDriver|           ; 87 (32)             ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|vgaCtl:vgaDriver                                                    ; vgaCtl      ; work         ;
+;       |counter:ctrX|            ; 28 (16)             ; 12 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|vgaCtl:vgaDriver|counter:ctrX                                       ; counter     ; work         ;
+;          |my_dff:myDff|         ; 12 (12)             ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5|vgaCtl:vgaDriver|counter:ctrX|my_dff:myDff                          ; my_dff      ; work         ;
+;       |counter:ctrY|            ; 27 (27)             ; 12 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab5|vgaCtl:vgaDriver|counter:ctrY                                       ; counter     ; work         ;
+;          |my_dff:myDff|         ; 0 (0)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |lab5|vgaCtl:vgaDriver|counter:ctrY|my_dff:myDff                          ; my_dff      ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                      ;
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; Register name                                                                ; Reason for Removal                                                                       ;
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[0]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[0]                        ;
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[1]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[1]                        ;
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[2]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[2]                        ;
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[3]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[3]                        ;
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[4]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[4]                        ;
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[5]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[5]                        ;
+; LV3:LV03|countCircle:jumpOffset|my_dff:myDff|q_val[6]                        ; Merged with LV2:LV02|countCircle:jumpOffset|my_dff:myDff|q_val[6]                        ;
+; LV3:LV03|tripSW:tripswitch|my_dff:tripSwitch|q_val[0]                        ; Merged with LV2:LV02|tripSW:tripswitch|my_dff:tripSwitch|q_val[0]                        ;
+; LV3:LV03|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch|q_val[0] ; Merged with LV2:LV02|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch|q_val[0] ;
+; Total Number of Removed Registers = 9                                        ;                                                                                          ;
++------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 88    ;
+; Number of registers using Synchronous Clear  ; 36    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab5|LV2:LV02|Mux8                             ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |lab5|LV2:LV02|Mux1                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab5|LV2:LV02|counter:subLevleCnt|Selector1    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab5|LV1:LV01|Mux8                             ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |lab5|LV1:LV01|Mux6                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab5|LV1:LV01|counter:subLevleCnt|Selector0    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab5|LV3:LV03|Mux8                             ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |lab5|LV3:LV03|Mux2                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab5|LV3:LV03|counter:subLevleCnt|Selector1    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab5|LV1:LV01|box:player|color[0][0]           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab5|LV2:LV02|box:player|color[0][1]           ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab5|LV3:LV03|box:player|color[1][0]           ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |lab5|vgaCtl:vgaDriver|counter:ctrY|Selector11  ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |lab5|Selector9                                 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |lab5|LV1:LV01|countCircle:jumpOffset|Selector6 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |lab5|LV2:LV02|countCircle:jumpOffset|Selector0 ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |lab5|LV1:LV01|setCounter:moveX|Selector0       ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |lab5|LV1:LV01|setCounter:moveX|Selector9       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |lab5|LV2:LV02|setCounter:moveX|Selector0       ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |lab5|LV2:LV02|setCounter:moveX|Selector2       ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |lab5|LV3:LV03|setCounter:moveX|Selector0       ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |lab5|LV3:LV03|setCounter:moveX|Selector5       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |lab5 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; pA             ; 12    ; Signed Integer                              ;
+; fA             ; 32    ; Signed Integer                              ;
+; cA             ; 4     ; Signed Integer                              ;
+; cM             ; 15    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; pA             ; 12    ; Signed Integer                       ;
+; fA             ; 32    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrX ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; b              ; 12    ; Signed Integer                                    ;
+; m              ; 800   ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrX|my_dff:myDff ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; size           ; 12    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrY ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; b              ; 12    ; Signed Integer                                    ;
+; m              ; 525   ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrY|my_dff:myDff ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; size           ; 12    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrF ;
++----------------+--------+--------------------------------------------------+
+; Parameter Name ; Value  ; Type                                             ;
++----------------+--------+--------------------------------------------------+
+; b              ; 32     ; Signed Integer                                   ;
+; m              ; 275625 ; Signed Integer                                   ;
++----------------+--------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vgaCtl:vgaDriver|counter:ctrF|my_dff:myDff ;
++----------------+-------+----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                           ;
++----------------+-------+----------------------------------------------------------------+
+; size           ; 32    ; Signed Integer                                                 ;
++----------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; pA             ; 12    ; Signed Integer               ;
+; cA             ; 4     ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|setCounter:moveX ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; b              ; 12    ; Signed Integer                                ;
+; m              ; 640   ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|setCounter:moveX|my_dff:myDff ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; size           ; 12    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|setCounter:moveX|my_dff:onStartDff ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                 ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|counter:subLevleCnt ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; b              ; 2     ; Signed Integer                                   ;
+; m              ; 4     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|counter:subLevleCnt|my_dff:myDff ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|tripSW:tripswitch|my_dff:tripSwitch ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                  ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|countCircle:jumpOffset ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; b              ; 7     ; Signed Integer                                      ;
+; m              ; 70    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|countCircle:jumpOffset|my_dff:myDff ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 7     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                                         ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:player ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; pA             ; 12    ; Signed Integer                          ;
+; cA             ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                  ;
+; cA             ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0|box:topFloor ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                               ;
+; cA             ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0|box:midFloor ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                               ;
+; cA             ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|theFloor:theFloor0|box:bottomFloor ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                                  ;
+; cA             ; 4     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv0b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv1b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv1b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV1:LV01|box:sv2b3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; pA             ; 12    ; Signed Integer               ;
+; cA             ; 4     ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|setCounter:moveX ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; b              ; 12    ; Signed Integer                                ;
+; m              ; 640   ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|setCounter:moveX|my_dff:myDff ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; size           ; 12    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|setCounter:moveX|my_dff:onStartDff ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                 ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|counter:subLevleCnt ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; b              ; 2     ; Signed Integer                                   ;
+; m              ; 4     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|counter:subLevleCnt|my_dff:myDff ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|tripSW:tripswitch|my_dff:tripSwitch ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                  ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|countCircle:jumpOffset ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; b              ; 7     ; Signed Integer                                      ;
+; m              ; 80    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|countCircle:jumpOffset|my_dff:myDff ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 7     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                                         ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:player ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; pA             ; 12    ; Signed Integer                          ;
+; cA             ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                  ;
+; cA             ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0|box:topFloor ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                               ;
+; cA             ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0|box:midFloor ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                               ;
+; cA             ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|theFloor:theFloor0|box:bottomFloor ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                                  ;
+; cA             ; 4     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv0b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv0b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv1b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv1b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv1b2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV2:LV02|box:sv2b3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; pA             ; 12    ; Signed Integer               ;
+; cA             ; 4     ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|setCounter:moveX ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; b              ; 12    ; Signed Integer                                ;
+; m              ; 640   ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|setCounter:moveX|my_dff:myDff ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; size           ; 12    ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|setCounter:moveX|my_dff:onStartDff ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                 ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|counter:subLevleCnt ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; b              ; 2     ; Signed Integer                                   ;
+; m              ; 4     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|counter:subLevleCnt|my_dff:myDff ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; size           ; 2     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|tripSW:tripswitch|my_dff:tripSwitch ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                  ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|countCircle:jumpOffset ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; b              ; 7     ; Signed Integer                                      ;
+; m              ; 80    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|countCircle:jumpOffset|my_dff:myDff ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; size           ; 7     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|countCircle:jumpOffset|tripSW:tripswitch|my_dff:tripSwitch ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+; size           ; 1     ; Unsigned Binary                                                                         ;
++----------------+-------+-----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:player ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; pA             ; 12    ; Signed Integer                          ;
+; cA             ; 4     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0 ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                  ;
+; cA             ; 4     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0|box:topFloor ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                               ;
+; cA             ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0|box:midFloor ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                               ;
+; cA             ; 4     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|theFloor:theFloor0|box:bottomFloor ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; pA             ; 12    ; Signed Integer                                                  ;
+; cA             ; 4     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv0b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv0b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv1b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv1b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv1b2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv2b0 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv2b1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LV3:LV03|box:sv2b2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; pA             ; 12    ; Signed Integer                         ;
+; cA             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv2b2"                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; width[4..1]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; width[11..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; width[0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[11..8] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[6..2]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[7]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[1]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[8..4]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[1..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[3]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[2]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[5..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[8]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[7]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[6]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; color[2..1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv2b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at GND ;
+; hight[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[4]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[8..6]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5..2]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[1]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv2b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at GND ;
+; hight[11..8] ; Input ; Info     ; Stuck at GND ;
+; hight[6..2]  ; Input ; Info     ; Stuck at GND ;
+; hight[7]     ; Input ; Info     ; Stuck at VCC ;
+; hight[1]     ; Input ; Info     ; Stuck at VCC ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5..1]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[7]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[6]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv1b2" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[2..1]  ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..8] ; Input ; Info     ; Stuck at GND ;
+; Xcord[5..4]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv1b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[2..1]  ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[7]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[6]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[5]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[0]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv1b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[2..1]  ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[8..4]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv0b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[1..0]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..7] ; Input ; Info     ; Stuck at GND ;
+; width[5..4]  ; Input ; Info     ; Stuck at GND ;
+; width[6]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at VCC ;
+; width[2]     ; Input ; Info     ; Stuck at GND ;
+; hight[11..3] ; Input ; Info     ; Stuck at GND ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[1]     ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[8..7]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[4]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..8] ; Input ; Info     ; Stuck at GND ;
+; Ycord[6..5]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[7]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[1]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:sv0b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[1..0]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..7] ; Input ; Info     ; Stuck at GND ;
+; width[5..4]  ; Input ; Info     ; Stuck at GND ;
+; width[6]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at VCC ;
+; width[2]     ; Input ; Info     ; Stuck at GND ;
+; hight[11..3] ; Input ; Info     ; Stuck at GND ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[1]     ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..8] ; Input ; Info     ; Stuck at GND ;
+; Ycord[6..5]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[7]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[1]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|box:player" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND  ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; width[4]     ; Input ; Info     ; Stuck at VCC  ;
+; width[3]     ; Input ; Info     ; Stuck at GND  ;
+; width[2]     ; Input ; Info     ; Stuck at VCC  ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND  ;
+; hight[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; hight[4]     ; Input ; Info     ; Stuck at VCC  ;
+; hight[3]     ; Input ; Info     ; Stuck at GND  ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC  ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|hdis:hex0DIS" ;
++----------+-------+----------+---------------------+
+; Port     ; Type  ; Severity ; Details             ;
++----------+-------+----------+---------------------+
+; sw[3..2] ; Input ; Info     ; Stuck at GND        ;
++----------+-------+----------+---------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|counter:subLevleCnt" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; dec  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03|setCounter:moveX" ;
++------------------+-------+----------+-----------------+
+; Port             ; Type  ; Severity ; Details         ;
++------------------+-------+----------+-----------------+
+; setValue[11..10] ; Input ; Info     ; Stuck at GND    ;
+; setValue[8..7]   ; Input ; Info     ; Stuck at GND    ;
+; setValue[1..0]   ; Input ; Info     ; Stuck at GND    ;
+; setValue[4]      ; Input ; Info     ; Stuck at GND    ;
++------------------+-------+----------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV3:LV03"                                                                                                           ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; topColor[11..9] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; topColor[7..5]  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; topColor[3..1]  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; topColor[8]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; topColor[4]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; topColor[0]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[11..8] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[6..5]  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[4..0]  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[7]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; hex0            ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv2b3"                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; width[4..3]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; width[11..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; width[2..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; width[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[5..4]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[11..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[3..2]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[1]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[3..2]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[1..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[8]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[8..7]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[3..1]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[6]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[0]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; color[2..1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv2b2"                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; width[4..3]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; width[11..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; width[2..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; width[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[11..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[2..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; hight[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hight[3]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[3..2]  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[7..6]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[1..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Xcord[8]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[5]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Xcord[4]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[5..1]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[8]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[7]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; Ycord[6]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; Ycord[0]     ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; color[2..1]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv2b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[11..4] ; Input ; Info     ; Stuck at GND ;
+; hight[3]     ; Input ; Info     ; Stuck at VCC ;
+; hight[2]     ; Input ; Info     ; Stuck at GND ;
+; hight[1]     ; Input ; Info     ; Stuck at VCC ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[8..6]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2..1]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[4]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[3]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[0]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv2b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[2..0]  ; Input ; Info     ; Stuck at GND ;
+; hight[5]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4]     ; Input ; Info     ; Stuck at GND ;
+; hight[3]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5..1]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[7]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[6]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv1b2" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[5..4]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[3..2]  ; Input ; Info     ; Stuck at GND ;
+; hight[1]     ; Input ; Info     ; Stuck at VCC ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[3..1]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..4]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv1b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[2..0]  ; Input ; Info     ; Stuck at GND ;
+; hight[5]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4]     ; Input ; Info     ; Stuck at GND ;
+; hight[3]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[4]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..5]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv1b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[2..1]  ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[8..4]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv0b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND ;
+; width[4]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at GND ;
+; width[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[5..4]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[3..2]  ; Input ; Info     ; Stuck at GND ;
+; hight[1]     ; Input ; Info     ; Stuck at VCC ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[4]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Ycord[4]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[1]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[0]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:sv0b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[2..1]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..7] ; Input ; Info     ; Stuck at GND ;
+; width[5..3]  ; Input ; Info     ; Stuck at GND ;
+; width[6]     ; Input ; Info     ; Stuck at VCC ;
+; width[0]     ; Input ; Info     ; Stuck at GND ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[1..0]  ; Input ; Info     ; Stuck at GND ;
+; hight[4]     ; Input ; Info     ; Stuck at VCC ;
+; hight[3]     ; Input ; Info     ; Stuck at GND ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[1..0]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..8] ; Input ; Info     ; Stuck at GND ;
+; Ycord[6..4]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[7]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[3]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|box:player" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND  ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; width[4]     ; Input ; Info     ; Stuck at VCC  ;
+; width[3]     ; Input ; Info     ; Stuck at GND  ;
+; width[2]     ; Input ; Info     ; Stuck at VCC  ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND  ;
+; hight[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; hight[4]     ; Input ; Info     ; Stuck at VCC  ;
+; hight[3]     ; Input ; Info     ; Stuck at GND  ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC  ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|countCircle:jumpOffset|my_dff:myDff" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|hdis:hex0DIS" ;
++----------+-------+----------+---------------------+
+; Port     ; Type  ; Severity ; Details             ;
++----------+-------+----------+---------------------+
+; sw[3..2] ; Input ; Info     ; Stuck at GND        ;
++----------+-------+----------+---------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|counter:subLevleCnt" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; dec  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02|setCounter:moveX" ;
++------------------+-------+----------+-----------------+
+; Port             ; Type  ; Severity ; Details         ;
++------------------+-------+----------+-----------------+
+; setValue[11..10] ; Input ; Info     ; Stuck at GND    ;
+; setValue[8..7]   ; Input ; Info     ; Stuck at GND    ;
+; setValue[1..0]   ; Input ; Info     ; Stuck at GND    ;
+; setValue[4]      ; Input ; Info     ; Stuck at GND    ;
++------------------+-------+----------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV2:LV02"                                                                                                           ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; topColor[5..4]  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; topColor[1..0]  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; topColor[11..6] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; topColor[3..2]  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[10..9] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[4..0]  ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[6..5]  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[11]    ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[8]     ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[7]     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; hex0            ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv2b3" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND ;
+; width[4]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at GND ;
+; width[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[1..0]  ; Input ; Info     ; Stuck at GND ;
+; hight[4]     ; Input ; Info     ; Stuck at VCC ;
+; hight[3]     ; Input ; Info     ; Stuck at GND ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[4]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[8..6]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5..4]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[1..0]  ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv2b2" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND ;
+; width[4]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at GND ;
+; width[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[5..2]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3..2]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[4]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5..1]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[7]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[6]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv2b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND ;
+; width[4]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at GND ;
+; width[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[2..0]  ; Input ; Info     ; Stuck at GND ;
+; hight[5]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4]     ; Input ; Info     ; Stuck at GND ;
+; hight[3]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[6..3]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[2..0]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8..7]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5..3]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[6]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv2b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND ;
+; width[4]     ; Input ; Info     ; Stuck at VCC ;
+; width[3]     ; Input ; Info     ; Stuck at GND ;
+; width[2]     ; Input ; Info     ; Stuck at VCC ;
+; hight[11..6] ; Input ; Info     ; Stuck at GND ;
+; hight[2..0]  ; Input ; Info     ; Stuck at GND ;
+; hight[5]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4]     ; Input ; Info     ; Stuck at GND ;
+; hight[3]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[6..3]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..7] ; Input ; Info     ; Stuck at GND ;
+; Xcord[2..0]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[5..1]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[7]     ; Input ; Info     ; Stuck at GND ;
+; Ycord[6]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv1b1" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at GND ;
+; hight[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[7..6]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..8] ; Input ; Info     ; Stuck at GND ;
+; Xcord[5..4]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[2..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..2]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[1]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv1b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[2..1]  ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at VCC ;
+; hight[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[2..1]  ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[8..7]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[6..5]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[3..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[4]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[2..0]  ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Ycord[7..6]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[8]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[5]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:sv0b0" ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; width[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; width[11..5] ; Input ; Info     ; Stuck at GND ;
+; width[0]     ; Input ; Info     ; Stuck at GND ;
+; hight[4..1]  ; Input ; Info     ; Stuck at VCC ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND ;
+; hight[0]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[8..7]  ; Input ; Info     ; Stuck at VCC ;
+; Xcord[11..9] ; Input ; Info     ; Stuck at GND ;
+; Xcord[4..3]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[1..0]  ; Input ; Info     ; Stuck at GND ;
+; Xcord[6]     ; Input ; Info     ; Stuck at GND ;
+; Xcord[5]     ; Input ; Info     ; Stuck at VCC ;
+; Xcord[2]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[11..8] ; Input ; Info     ; Stuck at GND ;
+; Ycord[6..1]  ; Input ; Info     ; Stuck at GND ;
+; Ycord[7]     ; Input ; Info     ; Stuck at VCC ;
+; Ycord[0]     ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|theFloor:theFloor0|box:bottomFloor" ;
++---------------+-------+----------+--------------------------------------+
+; Port          ; Type  ; Severity ; Details                              ;
++---------------+-------+----------+--------------------------------------+
+; width[11..10] ; Input ; Info     ; Stuck at GND                         ;
+; width[6..0]   ; Input ; Info     ; Stuck at GND                         ;
+; width[9]      ; Input ; Info     ; Stuck at VCC                         ;
+; width[8]      ; Input ; Info     ; Stuck at GND                         ;
+; width[7]      ; Input ; Info     ; Stuck at VCC                         ;
+; hight[11..8]  ; Input ; Info     ; Stuck at GND                         ;
+; hight[4..0]   ; Input ; Info     ; Stuck at GND                         ;
+; hight[7]      ; Input ; Info     ; Stuck at VCC                         ;
+; hight[6]      ; Input ; Info     ; Stuck at GND                         ;
+; hight[5]      ; Input ; Info     ; Stuck at VCC                         ;
+; Xcord         ; Input ; Info     ; Stuck at GND                         ;
+; Ycord[11..9]  ; Input ; Info     ; Stuck at GND                         ;
+; Ycord[5..1]   ; Input ; Info     ; Stuck at GND                         ;
+; Ycord[8]      ; Input ; Info     ; Stuck at VCC                         ;
+; Ycord[7]      ; Input ; Info     ; Stuck at GND                         ;
+; Ycord[6]      ; Input ; Info     ; Stuck at VCC                         ;
+; Ycord[0]      ; Input ; Info     ; Stuck at VCC                         ;
++---------------+-------+----------+--------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|theFloor:theFloor0|box:midFloor" ;
++---------------+-------+----------+-----------------------------------+
+; Port          ; Type  ; Severity ; Details                           ;
++---------------+-------+----------+-----------------------------------+
+; width[11..10] ; Input ; Info     ; Stuck at GND                      ;
+; width[6..0]   ; Input ; Info     ; Stuck at GND                      ;
+; width[9]      ; Input ; Info     ; Stuck at VCC                      ;
+; width[8]      ; Input ; Info     ; Stuck at GND                      ;
+; width[7]      ; Input ; Info     ; Stuck at VCC                      ;
+; hight[11..8]  ; Input ; Info     ; Stuck at GND                      ;
+; hight[4..0]   ; Input ; Info     ; Stuck at GND                      ;
+; hight[7]      ; Input ; Info     ; Stuck at VCC                      ;
+; hight[6]      ; Input ; Info     ; Stuck at GND                      ;
+; hight[5]      ; Input ; Info     ; Stuck at VCC                      ;
+; Xcord         ; Input ; Info     ; Stuck at GND                      ;
+; Ycord[11..8]  ; Input ; Info     ; Stuck at GND                      ;
+; Ycord[4..0]   ; Input ; Info     ; Stuck at GND                      ;
+; Ycord[7]      ; Input ; Info     ; Stuck at VCC                      ;
+; Ycord[6]      ; Input ; Info     ; Stuck at GND                      ;
+; Ycord[5]      ; Input ; Info     ; Stuck at VCC                      ;
++---------------+-------+----------+-----------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|theFloor:theFloor0|box:topFloor" ;
++---------------+-------+----------+-----------------------------------+
+; Port          ; Type  ; Severity ; Details                           ;
++---------------+-------+----------+-----------------------------------+
+; width[11..10] ; Input ; Info     ; Stuck at GND                      ;
+; width[6..0]   ; Input ; Info     ; Stuck at GND                      ;
+; width[9]      ; Input ; Info     ; Stuck at VCC                      ;
+; width[8]      ; Input ; Info     ; Stuck at GND                      ;
+; width[7]      ; Input ; Info     ; Stuck at VCC                      ;
+; hight[4..0]   ; Input ; Info     ; Stuck at VCC                      ;
+; hight[11..8]  ; Input ; Info     ; Stuck at GND                      ;
+; hight[6..5]   ; Input ; Info     ; Stuck at GND                      ;
+; hight[7]      ; Input ; Info     ; Stuck at VCC                      ;
+; Xcord         ; Input ; Info     ; Stuck at GND                      ;
+; Ycord         ; Input ; Info     ; Stuck at GND                      ;
++---------------+-------+----------+-----------------------------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|box:player" ;
++--------------+-------+----------+---------------+
+; Port         ; Type  ; Severity ; Details       ;
++--------------+-------+----------+---------------+
+; width[11..5] ; Input ; Info     ; Stuck at GND  ;
+; width[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; width[4]     ; Input ; Info     ; Stuck at VCC  ;
+; width[3]     ; Input ; Info     ; Stuck at GND  ;
+; width[2]     ; Input ; Info     ; Stuck at VCC  ;
+; hight[11..5] ; Input ; Info     ; Stuck at GND  ;
+; hight[1..0]  ; Input ; Info     ; Stuck at GND  ;
+; hight[4]     ; Input ; Info     ; Stuck at VCC  ;
+; hight[3]     ; Input ; Info     ; Stuck at GND  ;
+; hight[2]     ; Input ; Info     ; Stuck at VCC  ;
+; Ycord[11..9] ; Input ; Info     ; Stuck at GND  ;
++--------------+-------+----------+---------------+
+
+
++--------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|countCircle:jumpOffset|my_dff:myDff" ;
++------+-------+----------+------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                        ;
++------+-------+----------+------------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                   ;
++------+-------+----------+------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|hdis:hex0DIS" ;
++----------+-------+----------+---------------------+
+; Port     ; Type  ; Severity ; Details             ;
++----------+-------+----------+---------------------+
+; sw[3..2] ; Input ; Info     ; Stuck at GND        ;
++----------+-------+----------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|counter:subLevleCnt|my_dff:myDff" ;
++------+-------+----------+---------------------------------------------+
+; Port ; Type  ; Severity ; Details                                     ;
++------+-------+----------+---------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                ;
++------+-------+----------+---------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|counter:subLevleCnt" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; dec  ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|setCounter:moveX|my_dff:onStartDff" ;
++------+-------+----------+-----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                       ;
++------+-------+----------+-----------------------------------------------+
+; din  ; Input ; Info     ; Stuck at VCC                                  ;
+; en   ; Input ; Info     ; Stuck at VCC                                  ;
++------+-------+----------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|setCounter:moveX|my_dff:myDff" ;
++------+-------+----------+------------------------------------------+
+; Port ; Type  ; Severity ; Details                                  ;
++------+-------+----------+------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                             ;
++------+-------+----------+------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01|setCounter:moveX" ;
++------------------+-------+----------+-----------------+
+; Port             ; Type  ; Severity ; Details         ;
++------------------+-------+----------+-----------------+
+; setValue[11..10] ; Input ; Info     ; Stuck at GND    ;
+; setValue[8..7]   ; Input ; Info     ; Stuck at GND    ;
+; setValue[1..0]   ; Input ; Info     ; Stuck at GND    ;
+; setValue[4]      ; Input ; Info     ; Stuck at GND    ;
++------------------+-------+----------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LV1:LV01"                                                                                                            ;
++------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                                                  ;
++------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; topColor[6..2]   ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; topColor[11..7]  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; topColor[1..0]   ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[11..10] ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[8..6]   ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[4..2]   ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; midColor[9]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[5]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[1]      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; midColor[0]      ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; hex0             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrF|my_dff:myDff" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrF" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; dec  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrY|my_dff:myDff" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrY" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; dec  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrX|my_dff:myDff" ;
++------+-------+----------+----------------------------------------------+
+; Port ; Type  ; Severity ; Details                                      ;
++------+-------+----------+----------------------------------------------+
+; en   ; Input ; Info     ; Stuck at VCC                                 ;
++------+-------+----------+----------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver|counter:ctrX" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; inc  ; Input ; Info     ; Stuck at VCC                    ;
+; dec  ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vgaCtl:vgaDriver"                                                                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; frame_id ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 88                          ;
+;     ENA               ; 15                          ;
+;     SCLR              ; 36                          ;
+;     plain             ; 37                          ;
+; arriav_lcell_comb     ; 975                         ;
+;     arith             ; 257                         ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 202                         ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 22                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 707                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 53                          ;
+;         4 data inputs ; 89                          ;
+;         5 data inputs ; 146                         ;
+;         6 data inputs ; 363                         ;
+;     shared            ; 8                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 1                           ;
+; boundary_port         ; 25                          ;
+;                       ;                             ;
+; Max LUT depth         ; 10.40                       ;
+; Average LUT depth     ; 7.18                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Fri Jun  7 02:08:42 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab5 -c lab5
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file lv3.sv
+    Info (12023): Found entity 1: LV3 File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV3.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lv2.sv
+    Info (12023): Found entity 1: LV2 File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tripsw.sv
+    Info (12023): Found entity 1: tripSW File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/tripSW.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdis.sv
+    Info (12023): Found entity 1: hdis File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/hdis.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file countcircle.sv
+    Info (12023): Found entity 1: countCircle File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file thefloor.sv
+    Info (12023): Found entity 1: theFloor File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/theFloor.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lv1.sv
+    Info (12023): Found entity 1: LV1 File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file player.sv
+    Info (12023): Found entity 1: player File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/player.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file setcounter.sv
+    Info (12023): Found entity 1: setCounter File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/setCounter.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file vgactl.sv
+    Info (12023): Found entity 1: vgaCtl File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file my_dff.sv
+    Info (12023): Found entity 1: my_dff File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/my_dff.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file lab5.sv
+    Info (12023): Found entity 1: lab5 File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file counter.sv
+    Info (12023): Found entity 1: counter File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file clock.sv
+    Info (12023): Found entity 1: clock File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/clock.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file box.sv
+    Info (12023): Found entity 1: box File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/box.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at player.sv(28): created implicit net for "playerX" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/player.sv Line: 28
+Warning (10236): Verilog HDL Implicit Net warning at player.sv(29): created implicit net for "playerY" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/player.sv Line: 29
+Info (12127): Elaborating entity "lab5" for the top level hierarchy
+Warning (10034): Output port "hex0" at lab5.sv(10) has no driver File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+Info (12128): Elaborating entity "vgaCtl" for hierarchy "vgaCtl:vgaDriver" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 67
+Warning (10230): Verilog HDL assignment warning at vgaCtl.sv(52): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at vgaCtl.sv(53): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv Line: 53
+Info (12128): Elaborating entity "counter" for hierarchy "vgaCtl:vgaDriver|counter:ctrX" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv Line: 39
+Warning (10230): Verilog HDL assignment warning at counter.sv(25): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at counter.sv(26): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 26
+Info (12128): Elaborating entity "my_dff" for hierarchy "vgaCtl:vgaDriver|counter:ctrX|my_dff:myDff" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 21
+Info (12128): Elaborating entity "counter" for hierarchy "vgaCtl:vgaDriver|counter:ctrY" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv Line: 40
+Warning (10230): Verilog HDL assignment warning at counter.sv(25): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at counter.sv(26): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 26
+Info (12128): Elaborating entity "counter" for hierarchy "vgaCtl:vgaDriver|counter:ctrF" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/vgaCtl.sv Line: 41
+Info (12128): Elaborating entity "my_dff" for hierarchy "vgaCtl:vgaDriver|counter:ctrF|my_dff:myDff" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 21
+Info (12128): Elaborating entity "LV1" for hierarchy "LV1:LV01" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 77
+Info (12128): Elaborating entity "setCounter" for hierarchy "LV1:LV01|setCounter:moveX" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at setCounter.sv(30): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/setCounter.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at setCounter.sv(31): truncated value with size 32 to match size of target (12) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/setCounter.sv Line: 31
+Info (12128): Elaborating entity "my_dff" for hierarchy "LV1:LV01|setCounter:moveX|my_dff:onStartDff" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/setCounter.sv Line: 26
+Info (12128): Elaborating entity "counter" for hierarchy "LV1:LV01|counter:subLevleCnt" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 73
+Warning (10230): Verilog HDL assignment warning at counter.sv(25): truncated value with size 32 to match size of target (2) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at counter.sv(26): truncated value with size 32 to match size of target (2) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 26
+Info (12128): Elaborating entity "my_dff" for hierarchy "LV1:LV01|counter:subLevleCnt|my_dff:myDff" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/counter.sv Line: 21
+Info (12128): Elaborating entity "hdis" for hierarchy "LV1:LV01|hdis:hex0DIS" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 108
+Info (12128): Elaborating entity "tripSW" for hierarchy "LV1:LV01|tripSW:tripswitch" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 115
+Warning (10763): Verilog HDL warning at tripSW.sv(14): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/tripSW.sv Line: 14
+Warning (10958): SystemVerilog warning at tripSW.sv(14): unique or priority keyword makes case statement complete File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/tripSW.sv Line: 14
+Info (12128): Elaborating entity "countCircle" for hierarchy "LV1:LV01|countCircle:jumpOffset" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 116
+Warning (10230): Verilog HDL assignment warning at countCircle.sv(25): truncated value with size 32 to match size of target (7) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at countCircle.sv(26): truncated value with size 32 to match size of target (7) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv Line: 26
+Info (12128): Elaborating entity "my_dff" for hierarchy "LV1:LV01|countCircle:jumpOffset|my_dff:myDff" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv Line: 19
+Info (12128): Elaborating entity "box" for hierarchy "LV1:LV01|box:player" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 140
+Info (12128): Elaborating entity "theFloor" for hierarchy "LV1:LV01|theFloor:theFloor0" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV1.sv Line: 146
+Info (12128): Elaborating entity "LV2" for hierarchy "LV2:LV02" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 86
+Info (12128): Elaborating entity "countCircle" for hierarchy "LV2:LV02|countCircle:jumpOffset" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/LV2.sv Line: 119
+Warning (10230): Verilog HDL assignment warning at countCircle.sv(25): truncated value with size 32 to match size of target (7) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at countCircle.sv(26): truncated value with size 32 to match size of target (7) File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/countCircle.sv Line: 26
+Info (12128): Elaborating entity "LV3" for hierarchy "LV3:LV03" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 95
+Info (12128): Elaborating entity "clock" for hierarchy "clock:clk1" File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 131
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "hex0[0]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+    Warning (13410): Pin "hex0[1]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+    Warning (13410): Pin "hex0[2]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+    Warning (13410): Pin "hex0[3]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+    Warning (13410): Pin "hex0[4]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+    Warning (13410): Pin "hex0[5]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+    Warning (13410): Pin "hex0[6]" is stuck at GND File: C:/Users/Xaio/Downloads/Space_Is_Key0-main/lab5.sv Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 999 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 974 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 4892 megabytes
+    Info: Processing ended: Fri Jun  7 02:08:51 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:06
+
+

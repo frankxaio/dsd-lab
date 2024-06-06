@@ -28,6 +28,7 @@ module top (
         .sw_low(a),  //active low
         .db(a_db)  //active high
     );
+
     debouncing_button db_m1 (
         .clk(clk),
         .rst_n(rst_n),
@@ -57,6 +58,9 @@ module top (
     assign is_full = (seg_disp == 4'd0) ? 1 : 0;
 
     scan scan_m0 (.*);
+
+
+
 
     //Instantiation of LED-mux module
     // LED_mux led_mux (
